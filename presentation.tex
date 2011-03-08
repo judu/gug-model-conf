@@ -1,0 +1,114 @@
+\documentclass{beamer}
+\usepackage{xunicode}
+\usepackage{fontspec}
+\usepackage[frenchb]{babel}
+\usepackage{graphicx}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usetheme{CambridgeUS}
+%\usecolortheme{beaver}
+
+
+
+
+%\definecolor{titre}{rgb}{0.50,0.00,0.10}
+%\setbeamercolor{structure}{fg=titre, bg=white}
+
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber}
+
+\AtBeginSection[]
+{
+	\frame{
+		\frametitle{What now?}
+%		\tableofcontents[currentsection,hideothersubsections]
+        \tableofcontents[sectionstyle=show/shaded, subsectionstyle=show/show/hide]
+	}
+}
+
+
+
+\title{Git : model and workflows}
+\author{Julien Durillon}
+\date{\today}
+
+\begin{document}
+	\frame{\titlepage}
+
+	\frame{
+		\frametitle{Table of Contents}
+		\tableofcontents[sectionstyle=show/show, subsectionstyle=hide/hide]
+	}
+
+	\section{Into Git's entrails}
+
+	\subsection{Objects}
+
+    \begin{frame}[fragile]
+	    \frametitle{Git objects}
+	    \framesubtitle{Contained in}
+        \begin{verbatim}
+.git
+|-- config
+|-- description
+|-- HEAD
+|-- hooks
+|-- info
+|   `-- exclude
+|-- objects *
+|   |-- info
+|   `-- pack
+`-- refs
+    |-- heads
+    `-- tags
+        \end{verbatim}
+	\end{frame}
+
+	\frame{
+	    \frametitle{Blobs and Trees}
+	    \framesubtitle{Basically\dots}
+        \begin{itemize}
+            \item A blob is a file
+            \item A tree is a folder
+        \end{itemize}
+    \pause
+        \begin{center}
+            \includegraphics[height=0.5\textheight]{./figures/blobandtree.png}
+        \end{center}
+	}
+
+	\subsection{Reminder}
+
+	\frame{
+
+
+	}
+
+	\subsection{Commits}
+
+	\frame{
+	    \frametitle{Commits}
+	    \framesubtitle{Contain}
+
+	        \begin{itemize}
+                \item Author
+                \item Commiter
+                \item Tree
+	        \end{itemize}
+
+
+
+	}
+
+	\subsection{Branches, Tags, all that stuff}
+
+	\section{Workflows}
+
+	    \subsection{À la Subversion: central repo}
+
+	    \subsection{Fully decentralized}
+
+	    \subsection{À la Linux Kernel : the benevolent dictator}
+
+\end{document}
+
